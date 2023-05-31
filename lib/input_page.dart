@@ -46,34 +46,30 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPressed: () {
                       setState(() {
                         updateColor(Gender.male);
                       });
                     },
-                    child: ReusableCard(
-                      colour: maleCardColour,
-                      cardChild: IconWidget(
-                        icon: FontAwesomeIcons.mars,
-                        iconName: 'MALE',
-                      ),
+                    colour: maleCardColour,
+                    cardChild: IconWidget(
+                      icon: FontAwesomeIcons.mars,
+                      iconName: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPressed: () {
                       setState(() {
                         updateColor(Gender.female);
                       });
                     },
-                    child: ReusableCard(
-                      colour: femaleCardColour,
-                      cardChild: IconWidget(
-                        icon: FontAwesomeIcons.venus,
-                        iconName: 'FEMALE',
-                      ),
+                    colour: femaleCardColour,
+                    cardChild: IconWidget(
+                      icon: FontAwesomeIcons.venus,
+                      iconName: 'FEMALE',
                     ),
                   ),
                 ),
@@ -112,7 +108,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-int myAge = 28;
-
-bool canBuyAlcohol = myAge > 21 ? true : false;
