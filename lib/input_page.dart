@@ -24,6 +24,15 @@ class _InputPageState extends State<InputPage> {
   Color maleCardColour = inactiveCardColour;
   Color femaleCardColour = inactiveCardColour;
 
+  void updateColor(Gender selectedGender) {
+    selectedGender == Gender.male
+        ? maleCardColour = activeCardColour
+        : maleCardColour = inactiveCardColour;
+    selectedGender == Gender.female
+        ? femaleCardColour = activeCardColour
+        : femaleCardColour = inactiveCardColour;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,13 +49,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender == Gender.male;
+                        updateColor(Gender.male);
                       });
                     },
                     child: ReusableCard(
-                      colour: selectedGender == Gender.male
-                          ? maleCardColour = activeCardColour
-                          : maleCardColour = inactiveCardColour,
+                      colour: maleCardColour,
                       cardChild: IconWidget(
                         icon: FontAwesomeIcons.mars,
                         iconName: 'MALE',
@@ -58,13 +65,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender == Gender.female;
+                        updateColor(Gender.female);
                       });
                     },
                     child: ReusableCard(
-                      colour: selectedGender == Gender.female
-                          ? femaleCardColour = activeCardColour
-                          : femaleCardColour = inactiveCardColour,
+                      colour: femaleCardColour,
                       cardChild: IconWidget(
                         icon: FontAwesomeIcons.venus,
                         iconName: 'FEMALE',
