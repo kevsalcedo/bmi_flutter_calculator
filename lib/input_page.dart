@@ -40,7 +40,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -224,7 +224,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
-            color: buttonSubmitColor,
+            color: kButtonSubmitColor,
             margin: const EdgeInsets.only(top: 10.0),
             width: double.infinity,
             height: 80.0,
