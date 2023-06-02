@@ -6,11 +6,13 @@ enum Gender {
 }
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.colour, this.cardChild, this.onPressed});
+  ReusableCard(
+      {required this.colour, this.cardChild, this.onPressed, this.padding});
 
   final Color colour;
   final Widget? cardChild;
   Function? onPressed;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class ReusableCard extends StatelessWidget {
         onPressed!();
       },
       child: Container(
+        padding: padding,
         margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           color: colour,
