@@ -29,6 +29,10 @@ class _InputPageState extends State<InputPage> {
         : femaleCardColour = kInactiveCardColour;
   }
 
+  int height = 180;
+  int weight = 60;
+  int age = 20;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
